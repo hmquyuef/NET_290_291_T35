@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using NET_290_291_T35.Areas.Admin.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<PetShopContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 var app = builder.Build();
 
