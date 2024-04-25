@@ -1,0 +1,45 @@
+﻿@* Modal *@
+<div class="modal fade" id="backDropModal" data-bs-backdrop="static" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="backDropModalTitle">Khai báo thông tin sản phẩm</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-3">
+                        <label for="tensanpham" class="form-label">Tên sản phẩm</label>
+                        <input type="text" id="tensanpham" name="tensanpham" class="form-control" placeholder="">
+                    </div>
+                </div>
+                <div class="row mb-3 g-2">
+                    <div class="col mb-0">
+                        <label for="giaca" class="form-label">Giá cả</label>
+                        <input type="number" id="giaca" name="giaca" class="form-control" placeholder="">
+                    </div>
+                    <div class="col mb-0">
+                        <label for="danhgia" class="form-label">Đánh giá</label>
+                        <input type="number" id="danhgia" name="danhgia" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3">
+                        <label for="hinhanh" class="form-label">Hình ảnh đại diện</label>
+                        <input class="form-control" type="file" id="hinhanh" name="hinhanh">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3">
+                        <label for="mota" class="form-label">Mô tả thông tin</label>
+                        <textarea class="form-control" id="mota" name="mota" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Hủy bỏ</button>
+                <a id="addFood" class="btn btn-primary">Lưu</a>
+            </div>
+        </form>
+    </div>
+</div>
