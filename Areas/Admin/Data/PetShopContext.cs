@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NET_290_291_T35.Areas.Admin.Models.Fashions;
 using NET_290_291_T35.Areas.Admin.Models.Foods;
+using NET_290_291_T35.Areas.Admin.Models.ProductTypes;
 
 namespace NET_290_291_T35.Areas.Admin.Data
 {
@@ -11,5 +12,6 @@ namespace NET_290_291_T35.Areas.Admin.Data
 
         public DbSet<Food> Foods { get; set; }
         public DbSet<Fashion> Fashions { get; set; }
+        public DbSet<ProductType> ProductTypes { get; set; }
     }
 }

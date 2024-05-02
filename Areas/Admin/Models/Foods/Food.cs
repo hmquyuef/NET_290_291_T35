@@ -1,15 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using NET_290_291_T35.Areas.Admin.Models.Products;
 
 namespace NET_290_291_T35.Areas.Admin.Models.Foods
 {
-    public class Food
+    public class Food : Product
     {
-        [Key]
-        public Guid Id { get; set; }
-        public string? TenSanPham { get; set; }
-        public int Gia { get; set; }
-        public int DanhGia { get; set; }
-        public string? HinhAnh { get; set; }
-        public string? MoTa { get; set; }
     }
 }

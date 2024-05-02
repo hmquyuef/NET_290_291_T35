@@ -37,8 +37,14 @@ namespace NET_290_291_T35.Migrations
                     b.Property<string>("HinhAnh")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsActived")
+                        .HasColumnType("bit");
+
                     b.Property<string>("MoTa")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ProductTypeId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("TenSanPham")
                         .HasColumnType("nvarchar(max)");
@@ -63,8 +69,14 @@ namespace NET_290_291_T35.Migrations
                     b.Property<string>("HinhAnh")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsActived")
+                        .HasColumnType("bit");
+
                     b.Property<string>("MoTa")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ProductTypeId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("TenSanPham")
                         .HasColumnType("nvarchar(max)");
@@ -72,6 +84,31 @@ namespace NET_290_291_T35.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Foods");
+                });
+
+            modelBuilder.Entity("NET_290_291_T35.Areas.Admin.Models.ProductTypes.ProductType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Position")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProductTypes");
                 });
 #pragma warning restore 612, 618
         }
