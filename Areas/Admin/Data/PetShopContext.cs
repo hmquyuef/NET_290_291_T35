@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NET_290_291_T35.Areas.Admin.Models.Fashions;
-using NET_290_291_T35.Areas.Admin.Models.Foods;
-using NET_290_291_T35.Areas.Admin.Models.ProductTypes;
+using NET_290_291_T35.Areas.Admin.Models.Categories;
+using NET_290_291_T35.Areas.Admin.Models.Products;
 
 namespace NET_290_291_T35.Areas.Admin.Data
 {
@@ -10,8 +9,7 @@ namespace NET_290_291_T35.Areas.Admin.Data
         public PetShopContext() { }
         public PetShopContext(DbContextOptions<PetShopContext> options) : base(options) { }
 
-        public DbSet<Food> Foods { get; set; }
-        public DbSet<Fashion> Fashions { get; set; }
-        public DbSet<ProductType> ProductTypes { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

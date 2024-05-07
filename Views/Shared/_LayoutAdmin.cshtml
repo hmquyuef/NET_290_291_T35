@@ -38,7 +38,7 @@
     <script src="~/assets/vendor/js/helpers.js"></script>
     <script src="~/assets/vendor/js/template-customizer.js"></script>
     <script src="~/assets/js/config.js"></script>
-    
+
 </head>
 <body>
     <div class="layout-wrapper layout-content-navbar">
@@ -99,44 +99,22 @@
                             <div class="text-truncate">Bảng điều khiển</div>
                         </a>
                     </li>
-                    
+
                     <!-- Cửa hàng -->
                     <li class="menu-header small text-uppercase">
                         <span class="menu-header-text">cửa hàng</span>
                     </li>
-                    <li class="menu-item@(currentPage == "/food" ? " active" : "")">
-                        <a href="/food" class="menu-link">
+                    <li class="menu-item@(currentPage == "/product" ? " active" : "")">
+                        <a href="/product" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-envelope"></i>
-                            <div class="text-truncate">Thức ăn</div>
+                            <div class="text-truncate">Sản phẩm</div>
                         </a>
                     </li>
-                    <li class="menu-item@(currentPage == "/fashion" ? " active" : "")">
-                        <a href="/fashion" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-chat"></i>
-                            <div class="text-truncate">Thời trang</div>
-                        </a>
-                    </li>
-                    <li class="menu-item@(currentPage.StartsWithSegments("/category") ? " active open" : "")">
-                        <a href="/category" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-car"></i>
+                    <li class="menu-item@(currentPage == "/category" ? " active" : "")">
+                        <a href="/category" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-envelope"></i>
                             <div class="text-truncate">Danh mục</div>
                         </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item@(currentPage == "/category" ? " active" : "")">
-                                <a href="/category" class="menu-link">
-                                    <div class="text-truncate">Tất cả</div>
-                                </a>
-                            <li class="menu-item@(currentPage == "/category/product-type" ? " active" : "")">
-                                <a href="/category/product-type" class="menu-link">
-                                    <div class="text-truncate">Phân loại</div>
-                                </a>
-                            </li>
-                            <li class="menu-item@(currentPage == "/category/post" ? " active" : "")">
-                                <a href="/category/post" class="menu-link">
-                                    <div class="text-truncate">Bài viết</div>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -264,7 +242,7 @@
                             </li>
                         </ul>
                     </li>
-                    
+
                     <!-- Misc -->
                     <li class="menu-header small text-uppercase"><span class="menu-header-text" data-i18n="Misc">Misc</span></li>
                     <li class="menu-item">
@@ -619,7 +597,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="~/assets/vendor/libs/jquery/jquery.js"></script>
     <script src="~/assets/vendor/libs/popper/popper.js"></script>
     <script src="~/assets/vendor/js/bootstrap.js"></script>

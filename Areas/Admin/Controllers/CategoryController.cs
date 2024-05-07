@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NET_290_291_T35.Areas.Admin.Data;
-using NET_290_291_T35.Areas.Admin.Models.ProductTypes;
+using NET_290_291_T35.Areas.Admin.Models.Categories;
+using System.Security.Permissions;
 
 namespace NET_290_291_T35.Areas.Admin.Controllers
 {
@@ -20,82 +21,86 @@ namespace NET_290_291_T35.Areas.Admin.Controllers
         {
             return View();
         }
-
-        #region ProductTypes
-        [Route("product-type")]
-        public IActionResult ProductType()
+        [Route("all")]
+        public async Task<IActionResult> GetList()
         {
-            return View();
-        }
-
-        [Route("product-type/all")]
-        public async Task<IActionResult> ProductTypeAll()
-        {
-            var items = await _context.ProductTypes.OrderBy(x => x.Position).ThenBy(x => x.Name).ToListAsync();
-            return Ok(items);
-        }
-        [Route("product-type/{id}")]
-        public async Task<IActionResult> ProductTypeDetail(Guid id)
-        {
-            var item = await _context.ProductTypes.FirstOrDefaultAsync(x => x.Id == id);
-            if (item == null)
+            try
             {
-                return NotFound();
+                var items = await _context.Categories.OrderBy(x => x.Position).ToListAsync();
+                return Ok(items);
             }
-            return Ok(item);
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+        }
+        [Route("byid")]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            try
+            {
+                var item = await _context.Categories.FirstOrDefaultAsync(x => x.CategoryId == id);
+                if(item == null) return NotFound();
+                return Ok(item);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message) ;
+            }
         }
 
         [HttpPost]
-        [Route("product-type/add")]
-        public async Task<IActionResult> ProductTypeAdd(string tenloai, int vitri, string mota, bool kichhoat)
+        [Route("create")]
+        public async Task<IActionResult> Create(Category category)
         {
-            var item = new ProductType
+            try
             {
-                Id = Guid.NewGuid(),
-                Name = tenloai,
-                Position = vitri,
-                Description = mota,
-                IsActive = kichhoat
-            };
-            _context.ProductTypes.Add(item);
-            await _context.SaveChangesAsync();
-            return Ok(item);
-        }
-        [HttpPut]
-        [Route("product-type/edit")]
-        public async Task<IActionResult> ProductTypeEdit(Guid id, string tenloai, int vitri, string mota, bool kichhoat)
-        {
-            var item = await _context.ProductTypes.FirstOrDefaultAsync(x => x.Id == id);
-            if (item == null)
-            {
-                return NotFound();
+                category.CategoryId = Guid.NewGuid();
+                category.ParentId = category.ParentId == Guid.Empty ? category.CategoryId : category.ParentId;
+                var positionParent = await _context.Categories.FirstOrDefaultAsync(x => x.CategoryId == category.ParentId);
+                category.Position = category.ParentId == Guid.Empty ? category.Position : positionParent.Position + "." + category.Position;
+                _context.Categories.Add(category);
+                await _context.SaveChangesAsync();
+                return Ok(category);
             }
-            item.Name = tenloai;
-            item.Position = vitri;
-            item.Description = mota;
-            item.IsActive = kichhoat;
-            await _context.SaveChangesAsync();
-            return Ok(item);
-        }
-        [HttpDelete]
-        [Route("product-type/delete/{id}")]
-        public async Task<IActionResult> ProductTypeDelete(Guid id)
-        {
-            var item = await _context.ProductTypes.FirstOrDefaultAsync(x => x.Id == id);
-            if (item == null)
+            catch (Exception e)
             {
-                return NotFound();
+                return StatusCode(500, e.Message);
             }
-            _context.ProductTypes.Remove(item);
-            await _context.SaveChangesAsync();
-            return Ok(item);
         }
-        #endregion
 
-        [Route("post")]
-        public IActionResult Post()
+        [HttpPut]
+        [Route("edit")]
+        public async Task<IActionResult> Update(Category category)
         {
-            return View();
+            try
+            {
+                _context.Categories.Update(category);
+                await _context.SaveChangesAsync();
+                return Ok(category);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+        }
+
+        [HttpDelete]
+        [Route("delete")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            try
+            {
+                var item = await _context.Categories.FirstOrDefaultAsync(x => x.CategoryId == id);
+                if(item == null) return NotFound();
+                _context.Categories.Remove(item);
+                await _context.SaveChangesAsync();
+                return StatusCode(202);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
         }
     }
 }

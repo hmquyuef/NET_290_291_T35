@@ -1,0 +1,58 @@
+﻿<!-- Modal -->
+<div class="modal fade" id="modalCreateUpdateProduct" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <h5 class="modal-title text-white" id="modalProductTitle">Khai báo thông tin</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="d-flex justify-content-between gap-3">
+                    <div class="col">
+                        <input type="text" id="idProduct" value="" hidden />
+                        <div class="mb-3">
+                            <label for="tensanpham" class="form-label fw-bold">Tên sản phẩm</label>
+                            <input type="text" class="form-control" id="tensanpham" value="" placeholder="">
+                        </div>
+                        <div class="mb-3 d-flex flex-row justify-content-between gap-3">
+                            <div class="w-100">
+                                <label for="giaca" class="form-label fw-bold">Giá cả</label>
+                                <input type="number" class="form-control" id="giaca" value="" placeholder="">
+                            </div>
+                            <div class="w-100">
+                                <label for="danhmuc" class="form-label fw-bold">Danh mục</label>
+                                <select class="form-select" id="danhmuc" aria-label="Danh mục"></select>
+                            </div>
+                        </div>
+                        <div class="col mb-3">
+                            <label for="mota" class="form-label fw-bold">Mô tả</label>
+                            <textarea class="form-control" id="mota" value="" rows="6"></textarea>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="kichhoat" checked="">
+                            <label class="form-check-label" for="kichhoat">
+                                Kích hoạt
+                            </label>
+                        </div>
+                    </div>
+                    <form class="col" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Default file input example</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                        <div id="areaimage" class="text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+                                <rect width="300" height="300" fill="#cccccc"></rect>
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-size="25px" fill="#333333">300x300</text>
+                            </svg>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy bỏ</button>
+                <button class="btn btn-primary" onclick="CreateUpdateCategory()">Thêm mới</button>
+            </div>
+        </div>
+    </div>
+</div>
