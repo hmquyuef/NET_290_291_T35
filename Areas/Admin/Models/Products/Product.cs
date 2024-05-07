@@ -6,13 +6,12 @@ namespace NET_290_291_T35.Areas.Admin.Models.Products
     public class Product
     {
         [Key]
-        public Guid Id { get; set; }
-        public Guid ProductTypeId { get; set; }
-        public string? TenSanPham { get; set; }
-        public int Gia { get; set; }
-        public int DanhGia { get; set; }
-        public string? HinhAnh { get; set; }
-        public string? MoTa { get; set; }
+        public Guid ProductId { get; set; }
+        public string? ProductName { get; set; }
+        public int Price { get; set; }
+        public int Votes { get; set; }
+        public string? Image { get; set; }
+        public string? ProductDescript { get; set; }
         public bool IsActived { get; set; }
     }
 }

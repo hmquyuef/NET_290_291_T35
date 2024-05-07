@@ -1,7 +1,10 @@
-﻿namespace NET_290_291_T35.Areas.Admin.Models.ProductTypes
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace NET_290_291_T35.Areas.Admin.Models.Categories
 {
-    public class ProductType
+    public class Category
     {
+        [Key]
         public Guid CategoryId { get; set; }
         public Guid ParentCategoryId { get; set; }
         public string? CategoryName { get; set; }
