@@ -45,15 +45,26 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-sm-8 col-lg-4 d-flex justify-content-end gap-5 align-items-center mt-4 mt-sm-0 justify-content-center justify-content-sm-end">
-                    <div class="support-box text-end d-none d-xl-block">
-                        <span class="fs-6 secondary-font text-muted">Phone</span>
-                        <h5 class="mb-0">+980-34984089</h5>
-                    </div>
-                    <div class="support-box text-end d-none d-xl-block">
-                        <span class="fs-6 secondary-font text-muted">Email</span>
-                        <h5 class="mb-0">waggy@gmail.com</h5>
-                    </div>
+                <div class="col-sm-8 col-lg-4 d-flex justify-content-end gap-2 align-items-center mt-4 mt-sm-0 justify-content-center justify-content-sm-end">
+                    <a href="#" class="mx-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWishlist"
+                       aria-controls="offcanvasCart">
+                        <iconify-icon icon="mdi:tag-heart-outline" width="24" height="24"></iconify-icon>
+                        <span class="position-absolute translate-middle badge rounded-circle bg-primary pt-2">
+                            03
+                        </span>
+                    </a>
+                    <a href="#" class="mx-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
+                       aria-controls="offcanvasCart">
+                        <iconify-icon icon="mdi:cart-outline" width="24" height="24"></iconify-icon>
+                        <span class="position-absolute translate-middle badge rounded-circle bg-primary pt-2">
+                            03
+                        </span>
+                    </a>
+                    <partial name="_LoginPartial" />
+                    @* <div class="support-box text-end d-none d-xl-block">
+                    <span class="fs-6 secondary-font text-muted">Email</span>
+                    <h5 class="mb-0">waggy@gmail.com</h5>
+                    </div> *@
                 </div>
             </div>
         </div>
@@ -62,20 +73,8 @@
         </div>
         <div class="container">
             <nav class="main-menu d-flex navbar navbar-expand-lg ">
-
                 <div class="d-flex d-lg-none align-items-end mt-3">
                     <ul class="d-flex justify-content-end list-unstyled m-0">
-                        <li>
-                            <a href="account.html" class="mx-3">
-                                <iconify-icon icon="healthicons:person" class="fs-4"></iconify-icon>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="wishlist.html" class="mx-3">
-                                <iconify-icon icon="mdi:heart" class="fs-4"></iconify-icon>
-                            </a>
-                        </li>
-
                         <li>
                             <a href="#" class="mx-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
                                aria-controls="offcanvasCart">
@@ -85,16 +84,7 @@
                                 </span>
                             </a>
                         </li>
-
-                        <li>
-                            <a href="#" class="mx-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch"
-                               aria-controls="offcanvasSearch">
-                                <iconify-icon icon="tabler:search" class="fs-4"></iconify-icon>
-                                </span>
-                            </a>
-                        </li>
                     </ul>
-
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                         aria-controls="offcanvasNavbar">
@@ -106,14 +96,7 @@
                     <div class="offcanvas-header justify-content-center">
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body justify-content-between">
-                        <select class="filter-categories border-0 mb-0 me-5">
-                            <option>Shop by Category</option>
-                            <option>Clothes</option>
-                            <option>Food</option>
-                            <option>Food</option>
-                            <option>Toy</option>
-                        </select>
+                    <div class="offcanvas-body justify-content-center">
                         <ul class="navbar-nav menu-list list-unstyled d-flex gap-md-3 mb-0">
                             <li class="nav-item">
                                 <a href="index.html" class="nav-link active">Home</a>
@@ -210,29 +193,6 @@
                                 <a href="https://templatesjungle.gumroad.com/l/waggy-pet-shop-ecommerce-html-website-template" class="nav-link fw-bold text-dark" target="_blank">GET PRO</a>
                             </li>
                         </ul>
-                        <div class="d-none d-lg-flex align-items-end">
-                            <ul class="d-flex justify-content-end list-unstyled m-0">
-                                <li>
-                                    <a href="account.html" class="mx-3">
-                                        <iconify-icon icon="healthicons:person" class="fs-4"></iconify-icon>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="wishlist.html" class="mx-3">
-                                        <iconify-icon icon="mdi:heart" class="fs-4"></iconify-icon>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="#" class="mx-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
-                                       aria-controls="offcanvasCart">
-                                        <iconify-icon icon="mdi:cart" class="fs-4 position-relative"></iconify-icon>
-                                        <span class="position-absolute translate-middle badge rounded-circle bg-primary pt-2">
-                                            03
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </nav>

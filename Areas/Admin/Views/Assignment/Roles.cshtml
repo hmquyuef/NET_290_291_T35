@@ -1,14 +1,16 @@
-﻿@{
-    ViewData["Title"] = "Index";
+﻿
+@{
+    ViewData["Title"] = "Roles";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
+
 <div class="card">
     <div class="card-header text-end">
-        <button type="button" class="btn btn-label-danger" onclick="DeleteProduct()">
+        <button type="button" class="btn btn-label-danger" onclick="DeleteRoles()">
             <i class='bx bx-trash-alt me-1'></i>Xóa
         </button>
-        <button type="button" class="btn btn-label-primary" data-bs-toggle="modal" data-bs-target="#modalCreateUpdateProduct">
+        <button type="button" class="btn btn-label-primary" data-bs-toggle="modal" data-bs-target="#modalCreateUpdateRoles">
             <i class='bx bx-plus me-1'></i>Thêm mới
         </button>
     </div>
@@ -17,26 +19,25 @@
             <table class="table table-bordered">
                 <thead>
                     <tr class="text-center">
-                        <th>
+                        <th class="w-px-50">
                             <input type="checkbox" id="allCheckbox" class="form-check-input" />
                         </th>
-                        <th>Tên sản phẩm</th>
-                        <th>Giá</th>
-                        <th>Đánh giá</th>
-                        <th>Danh mục</th>
-                        <th>Trạng thái</th>
+                        <th>Tên quyền</th>
                         <th>Mô tả</th>
-                        <th class="align-middle">Sự kiện</th>
+                        <th class="w-px-150">Trạng thái</th>
+                        <th class="w-px-100 align-middle">Sự kiện</th>
                     </tr>
                 </thead>
-                <tbody id="listproduct"></tbody>
+                <tbody id="listrole"></tbody>
             </table>
         </div>
     </div>
 </div>
 
-@Html.Partial("ModalCreateUpdateProductPartial")
+@Html.Partial("ModalCreateUpdateRolesPartial")
 
 @section Scripts {
-    <script src="~/js/product.js"></script>
+    <script src="~/js/roles.js"></script>
 }
+
+

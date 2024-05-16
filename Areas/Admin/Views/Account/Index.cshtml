@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header text-end">
+        <button type="button" class="btn btn-label-danger" onclick="DeleteAccounts()">
+            <i class='bx bx-trash-alt me-1'></i>Xóa
+        </button>
+        <button type="button" class="btn btn-label-primary" data-bs-toggle="modal" data-bs-target="#modalCreateUpdateAccount">
+            <i class='bx bx-plus me-1'></i>Thêm mới
+        </button>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive text-nowrap">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="text-center">
+                        <th>
+                            <input type="checkbox" id="selectedAllCheckbox" />
+                        </th>
+                        <th>Tài khoản</th>
+                        <th>Thư điện tử</th>
+                        <th>Xác nhận Email</th>
+                        <th>Điện thoại</th>
+                        <th>Trạng thái</th>
+                        <th>Sự kiện</th>
+                    </tr>
+                </thead>
+                <tbody id="listaccount"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("ModalCreateUpdateAccountPartial")
+
+@section Scripts {
+    <script src="~/js/account.js"></script>
+}
